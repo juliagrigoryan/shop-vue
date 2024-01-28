@@ -1,0 +1,45 @@
+.sr-only {
+  @include size(0);
+  display: block;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.rating {
+  display: flex;
+  font-size: 2rem;
+
+  &::before {
+    color: $color-1--2;
+    content: "\2605";
+    display: block;
+    margin-right: 5px;
+  }
+}
+
+.preloader {
+  @include absolute(0, 0, 0, 0);
+  background-color: $color-white;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  z-index: 1;
+
+  &::before {
+    @include size(50px);
+    animation: spin 1s ease-in-out infinite;
+    border: 3px solid $color-1--1;
+    border-radius: 50%;
+    border-top-color: $color-white;
+    content: "";
+    display: inline-block;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px;
+}
